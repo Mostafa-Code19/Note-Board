@@ -50,6 +50,18 @@ body {
     filter: blur(5px);
 }
 
+.fade {
+    &-out {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    &-in {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
 .note {
     margin-right: 1.5rem;
     margin-bottom: 1.5rem;
@@ -57,32 +69,88 @@ body {
     min-height: 6rem;;
     height: fit-content;
     border: 2px solid rgb(124, 124, 124);
-    padding: 1rem;
+    padding: .5rem;
     background: rgb(230, 230, 230);
+    position: relative;
+    border-radius: 0.4rem;
+    font-family: cursive;
+
+    &__remove {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: none;
+        border: none;
+        
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &::before {
+            content: 'X';
+            color: rgb(167, 29, 29);
+            font-size: 1rem;
+        }
+    }
 }
 
 .option {
     position: relative;
 
-    &_add {
+    &__noteAdd {
         position: absolute;
         right: 1rem;
         top: 1rem;
-
-        &_board {
-            position: absolute;
-            margin-left: 50%;
-            margin-top: 25%;
-            transform: translate(-50%, -50%);
-            border: 2px solid red;
-            padding: 10rem;
-            z-index: 1;
-            background: white;
-            box-shadow: 0 0 15px black;
-        }
     }
 
     > div {
         cursor: pointer;
+    }
+
+    &__noteDetail {
+        position: absolute;
+        left: 50%; top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 2rem;
+        padding: 3rem;
+        z-index: 1;
+        background: white;
+        box-shadow: 0 0 25px black;
+
+        &__note {
+            width: 25rem;
+            height: 20rem;
+            border: none;
+            font-size: 1.125rem;
+            outline: none;
+        }
+
+        &__closeBtn {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.125rem;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &::before {
+                content: 'X'
+            }
+        }
+
+        &__submit {
+            display: block;
+            background: #65452b;
+            padding: 0.4rem 1rem;
+            color: white;
+            border: none;
+            box-shadow: 0 4px 7px black;
+            cursor: pointer;
+        }
     }
 }

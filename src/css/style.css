@@ -61,6 +61,16 @@ body {
           filter: blur(5px);
 }
 
+.fade-out {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.fade-in {
+  visibility: visible;
+  opacity: 1;
+}
+
 .note {
   margin-right: 1.5rem;
   margin-bottom: 1.5rem;
@@ -70,35 +80,92 @@ body {
   height: -moz-fit-content;
   height: fit-content;
   border: 2px solid #7c7c7c;
-  padding: 1rem;
+  padding: .5rem;
   background: #e6e6e6;
+  position: relative;
+  border-radius: 0.4rem;
+  font-family: cursive;
+}
+
+.note__remove {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  border: none;
+}
+
+.note__remove:hover {
+  cursor: pointer;
+}
+
+.note__remove::before {
+  content: 'X';
+  color: #a71d1d;
+  font-size: 1rem;
 }
 
 .option {
   position: relative;
 }
 
-.option_add {
+.option__noteAdd {
   position: absolute;
   right: 1rem;
   top: 1rem;
 }
 
-.option_add_board {
-  position: absolute;
-  margin-left: 50%;
-  margin-top: 25%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  border: 2px solid red;
-  padding: 10rem;
-  z-index: 1;
-  background: white;
-  -webkit-box-shadow: 0 0 15px black;
-          box-shadow: 0 0 15px black;
+.option > div {
+  cursor: pointer;
 }
 
-.option > div {
+.option__noteDetail {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 2rem;
+  padding: 3rem;
+  z-index: 1;
+  background: white;
+  -webkit-box-shadow: 0 0 25px black;
+          box-shadow: 0 0 25px black;
+}
+
+.option__noteDetail__note {
+  width: 25rem;
+  height: 20rem;
+  border: none;
+  font-size: 1.125rem;
+  outline: none;
+}
+
+.option__noteDetail__closeBtn {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.125rem;
+}
+
+.option__noteDetail__closeBtn:hover {
+  cursor: pointer;
+}
+
+.option__noteDetail__closeBtn::before {
+  content: 'X';
+}
+
+.option__noteDetail__submit {
+  display: block;
+  background: #65452b;
+  padding: 0.4rem 1rem;
+  color: white;
+  border: none;
+  -webkit-box-shadow: 0 4px 7px black;
+          box-shadow: 0 4px 7px black;
   cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */

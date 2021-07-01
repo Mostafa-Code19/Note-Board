@@ -9,29 +9,21 @@
 </head>
 <body>
     <div class="option">
-        <div class="option_add">
+        <div class="option__noteAdd">
             + Add
         </div>
-        <div class="option_add_board">
-            this is an add board
-        </div>
     </div>
-    <h1 class="board outOfFocus">Note Board</h1>
-    <div class="board container flex outOfFocus">
-        <div class="note">
-            this is a first note
-        </div>
-        <div class="note">
-            i love programming
-        </div>
-        <div class="note">
-            what am i doing with my life?
-        </div>
-        <div class="note">
-            when can i run from IRAN?!
-            when can i run from IRAN?!
-            when can i run from IRAN?
-        </div>
+    <h1 class="board__title">Note Board</h1>
+    
+    <div class="option__noteDetail fade-out">
+        <button class="option__noteDetail__closeBtn"></button>
+        <form>
+            <textarea class="option__noteDetail__note" cols="30" rows="10" placeholder="Write Your Note..."></textarea>
+            <button type="button" class="option__noteDetail__submit">Submit</button>
+        </form>
+    </div>
+
+    <div class="board container flex">
     </div>
 
     <script src="/src/script.js"></script>

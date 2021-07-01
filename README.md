@@ -1,2 +1,3 @@
 # Note board for taking note (MIND BLOWING !!!)
-on progress
+# Simple Note Board
+Nice looking note board with localStorage storing
